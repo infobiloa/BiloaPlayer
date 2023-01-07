@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v2.zplayer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"/>
+  
+</head>
+<body>
+<div class="subscribe-box"> 
+  <img src="https://raw.githubusercontent.com/SH20RAJ/DrivePlyr/main/drive-logo.png" alt="drive-logo.png">
+  <h2>B!loaPlayer</h2>
+  <div class="subscribe">
+    <input type="text" placeholder="Enter Your Drive Video Link*" autocomplete="on" id="videourl" required="required"/>
+    <input type="text" placeholder="Poster URL (optional)" autocomplete="on" id="posterurl"/>
+    <input type="text" placeholder="Video Title (optional)" autocomplete="on" id="videotitle"/>
+
+    
+    <button onclick="get()"> <span>GET</span></button>
+  </div>
+</div>
+  <div class="container">
+    
+    <div class="card" style="width:80%">
+    <div class="card-body">
+      <h4 class="card-title">B!loa Player</h4>
+      <p class="card-text">
+        
+<iframe id="fluid" width="560" height="315" 
+scrolling="no"
+src="fluid.html" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+          
+      
+      </p>
+      <a href="#" onclick="embedfluid()" class="card-link">Embed Code</a>
+      <a href="#" onclick="openfluid()" class="card-link">Open</a>
+    </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <h3><a href="#">B! - Serve Technology</a></h3>
+    <h5>More Players may come soon...</h5>
+  </footer>
+  <style>
+    footer{
+      position: relative;
+      bottom: 0;
+      padding: 20px;
+      background: black;
+      text-align: center;
+      display: block;
+      color: white;
+    }
+  </style>
+  <script src="script.js"></script>
+
+  
+</body>
+</html>

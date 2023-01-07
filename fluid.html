@@ -1,0 +1,38 @@
+<style>
+  body {
+    margin : 0;
+    padding: 0;
+  }
+  video{
+	width: 100%;
+	height: 100%;
+  }
+</style>
+<script src="fluidplayer.min.js"></script>
+<video poster="poster.jpg" width="100%" id="video-id" controls><source src="video.mp4" type="video/mp4" />
+	<script>
+		var myFP = fluidPlayer(
+			'video-id',	{
+		
+		"vastOptions": {
+			"adList": [],
+			"adCTAText": false,
+			"adCTATextPosition": ""
+		}
+	}
+		);
+	</script>
+<script>
+  
+  function getparam(a,e){return e||(e=window.location.href),new URL(e).searchParams.get(a)}
+
+  let video = document.getElementById('video-id');
+  if(getparam('id')){
+    let json = JSON.parse(atob(getparam('id'))) ;
+    let driveid = json.id;
+    video.src = `${driveid }`;
+    //video.poster = driveid;
+  }
+</script>
+
+ 

@@ -45,8 +45,9 @@
   if(getparam('id')){
     let json = JSON.parse(atob(getparam('id'))) ;
     let driveid = json.id;
+	let drivei_p = json.id;
     video.src = `${driveid }`;
-    video.poster = driveid;
+    video.poster = `${drivei_p}`;
   }
 </script>
 

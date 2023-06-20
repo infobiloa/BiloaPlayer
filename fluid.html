@@ -1,3 +1,69 @@
+<!-- Docs styles -->
+<link rel="stylesheet" href="plyr.css" />
+
+<!--Add a Simple HTML5 Video tag-->
+<div id="container">
+  <video controls poster="poster.jpg" id="vid1">
+    <!-- Video files -->
+    <source src="video.mp4" type="video/mp4" size="576" />
+
+  </video>
+</div>
+
+<script src="plyr.min.js"></script>
+
+<script>
+  var controls =
+[
+    'play-large', // The large play button in the center
+   // 'restart', // Restart playback
+   // 'rewind', // Rewind by the seek time (default 10 seconds)
+    'play', // Play/pause playback
+    'fast-forward', // Fast forward by the seek time (default 10 seconds)
+    'progress', // The progress bar and scrubber for playback and buffering
+    'current-time', // The current time of playback
+    'duration', // The full duration of the media
+    'mute', // Toggle mute
+    'volume', // Volume control
+    'captions', // Toggle captions
+    'settings', // Settings menu
+    'pip', // Picture-in-picture (currently Safari only)
+    'airplay', // Airplay (currently Safari only)
+    //'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+    'fullscreen' // Toggle fullscreen
+];
+
+  const player = new Plyr('#vid1',{controls});
+</script>
+
+<style>
+  :root {
+  --plyr-color-main: #fd0000;
+    --plyr-video-control-color  :#e8ffba;
+}
+
+</style>
+
+<script>
+  
+  function getparam(a,e){return e||(e=window.location.href),new URL(e).searchParams.get(a)}
+
+  let video = document.getElementById('vid1');
+  if(getparam('id')){
+    let json = JSON.parse(atob(getparam('id'))) ;
+    let driveid = json.id;
+    video.src = `${driveid }`;
+    video.poster = driveid;
+  }
+</script>
+
+
+
+
+
+
+<!--fluid-->
+<!--
 <style>
         html, body{height: 100%;margin: 0;display: flex;flex-direction: column;}
         #fluid_video_wrapper_video-id{width: 100%;height: 100%;}
@@ -49,5 +115,5 @@
     video.poster = driveid;
   }
 </script>
-
+-->
  
